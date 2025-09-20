@@ -29,7 +29,20 @@ const userSchema = new mongoose.Schema({
     socketId: {
         type: String,
     },
-})
+    avatar: {
+        url: String,
+        publicId: String
+    },
+    bio: {
+        type: String,
+        maxlength: 200,
+        default: ''
+    },
+    followingCount: {
+        type: Number,
+        default: 0
+    }
+}, { timestamps: true})
 
 userSchema.methods.generateAuthToken = function () {
     const token = jwt.sign({ _id: this._id }, process.env.JWT_SECRET, { expiresIn: '24h' });

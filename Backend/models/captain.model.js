@@ -66,8 +66,25 @@ const captainSchema = new mongoose.Schema({
         lng: {
             type: Number,
         }
+    },
+    avatar: {
+        url: String,
+        publicId: String
+    },
+    bio: {
+        type: String,
+        maxlength: 200,
+        default: ''
+    },
+    followersCount: {
+        type: Number,
+        default: 0
+    },
+    postsCount: {
+        type: Number,
+        default: 0
     }
-})
+}, { timestamps: true })
 
 
 captainSchema.methods.generateAuthToken = function () {
