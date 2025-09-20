@@ -11,7 +11,13 @@ const io = initializeSocket(server);
 // Make io accessible in the app for controllers
 app.set('io', io);
 
-server.listen(port, () => {
+// server.listen(port, () => {
+//     console.log(`Server is running on port ${port}`);
+//     console.log(`Socket.IO server initialized`);
+// });
+
+server.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on port ${port}`);
     console.log(`Socket.IO server initialized`);
+    console.log(`Server accessible on all network interfaces`);
 });
