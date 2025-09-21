@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { UserDataContext } from '../context/UserContext'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import SwiftRide from '../assets/SwiftRideBlack.svg'
 
 const UserLogin = () => {
   const [ email, setEmail ] = useState('')
@@ -39,7 +40,7 @@ const UserLogin = () => {
   return (
     <div className='p-7 h-screen flex flex-col justify-between'>
       <div>
-        <img className='w-16 mb-10' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYQy-OIkA6In0fTvVwZADPmFFibjmszu2A0g&s" alt="" />
+        <img className='w-28 mb-10' src={SwiftRide} alt="" />
 
         <form onSubmit={(e) => {
           submitHandler(e)
