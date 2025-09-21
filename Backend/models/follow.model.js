@@ -16,11 +16,6 @@ const followSchema = new mongoose.Schema({
         ref: 'captain',
         required: true
     },
-    followingType: {
-        type: String,
-        default: 'captain',
-        enum: ['captain']
-    },
     followedAt: {
         type: Date,
         default: Date.now
@@ -29,9 +24,7 @@ const followSchema = new mongoose.Schema({
     timestamps: true
 });
 
-// Create compound index to prevent duplicate follows and improve query performance
-followSchema.index({ follower: 1, following: 1, followerType: 1 }, { unique: true });
+followSchema.index({ follower: 1, following: 1 }, { unique: true });
 
 const followModel = mongoose.model('follow', followSchema);
-
 module.exports = followModel;
