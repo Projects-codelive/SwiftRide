@@ -170,7 +170,7 @@ const Home = () => {
             gsap.to(panelRef.current, { height: '70%', padding: 24 })
             gsap.to(panelCloseRef.current, { opacity: 1 })
         } else {
-            gsap.to(panelRef.current, { height: '0%', padding: 0 })
+            gsap.to(panelRef.current, { height: '-10%', padding: 0 })
             gsap.to(panelCloseRef.current, { opacity: 0 })
         }
     }, [panelOpen])
@@ -179,7 +179,7 @@ const Home = () => {
         if (vehiclePanel) {
             gsap.to(vehiclePanelRef.current, { transform: 'translateY(0)' })
         } else {
-            gsap.to(vehiclePanelRef.current, { transform: 'translateY(100%)' })
+            gsap.to(vehiclePanelRef.current, { transform: 'translateY(120%)' })
         }
     }, [vehiclePanel])
 
@@ -187,7 +187,7 @@ const Home = () => {
         if (confirmRidePanel) {
             gsap.to(confirmRidePanelRef.current, { transform: 'translateY(0)' })
         } else {
-            gsap.to(confirmRidePanelRef.current, { transform: 'translateY(100%)' })
+            gsap.to(confirmRidePanelRef.current, { transform: 'translateY(120%)' })
         }
     }, [confirmRidePanel])
 
@@ -195,7 +195,7 @@ const Home = () => {
         if (vehicleFound) {
             gsap.to(vehicleFoundRef.current, { transform: 'translateY(0)' })
         } else {
-            gsap.to(vehicleFoundRef.current, { transform: 'translateY(100%)' })
+            gsap.to(vehicleFoundRef.current, { transform: 'translateY(120%)' })
         }
     }, [vehicleFound])
 
@@ -203,7 +203,7 @@ const Home = () => {
         if (waitingForDriver) {
             gsap.to(waitingForDriverRef.current, { transform: 'translateY(0)' })
         } else {
-            gsap.to(waitingForDriverRef.current, { transform: 'translateY(100%)' })
+            gsap.to(waitingForDriverRef.current, { transform: 'translateY(120%)' })
         }
     }, [waitingForDriver])
 
@@ -362,7 +362,7 @@ const Home = () => {
                         />
                     </div>
 
-                    <div ref={vehicleFoundRef} className='fixed w-full z-10 bottom-0 translate-y-full bg-white px-3 py-6 pt-12'>
+                    <div ref={vehicleFoundRef} className='fixed w-full z-10 bottom-[-10%] translate-y-full bg-white px-3 py-6 pt-12'>
                         <LookingForDriver
                             createRide={createRide}
                             pickup={pickup}
